@@ -1,9 +1,9 @@
-README#ES6学习
+# ES6学习
 [阮一峰ES6](http://es6.ruanyifeng.com/ES6.md#docs/let)
-##1.变量（let&const） 
+## 1.变量（let&const） 
 **变量 es5及以前使用var，ES6新let、const。**
-###1.1 var
-```
+### 1.1 var
+```js
 // 变量var
     // a.作用域：函数级
         function v1(){
@@ -28,8 +28,8 @@ README#ES6学习
     console.log(m);//undefined
     var m = 2;
 ```
-###1.2 let&const 
-```
+### 1.2 let&const 
+```js
  // es6中let,const
     // a.作用于：块级 - {}花括号
         if(true){
@@ -55,9 +55,10 @@ README#ES6学习
         console.log(m1); //报错
         let m1 = 3;
 ```
-##2.变量的解构赋值
+## 2.变量的解构赋值
 **ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。**
 
+```js
     //等号两边结构相同就可以解构
     let [a,b,c] = [1, 2, 3]; //a=1,b=2,c=3
     
@@ -83,45 +84,50 @@ README#ES6学习
     x // "a"
     y // undefined
     z // []
+```
 **解构赋值允许默认值**
     
+```js
     let [foo = true] = [];
     foo // true
     
     let [x, y = 'b'] = ['a']; // x='a', y='b'
     let [x, y = 'b'] = ['a', undefined]; // x='a', y='b'
+```
     
-##3.字符串扩展
-###3.1 es6之前字符串方法
+## 3.字符串扩展
+### 3.1 es6之前字符串方法
 
-    /***
-         *  属性
-         *      1. str.length
-         *      2. str.constructor
-         *      3. str.prototype
-         *  方法
-         *      1. let str = new String('abc');  //或 str = 'abc';
-         *      2. str.charAt(1);     //返回索引1处的字符'b'
-         *      3. str.charCodeAt(); //返回指定位置字符的Unicode码
-         *      3. let newStr = str.concat('def');  //拼接两个或多个字符串，返回新的字符串
-         *      4. String.fromCharCode(98); //接受一个或多个Unicode值返回字符
-         *      5. str.indexOf('a');    //  返回检索指定字符串第一出现的位置，下标
-         *      6. str.lastIndexOf('a');    //返回检索指定字符串最后一次出现的位置
-         *      7. str.match();     // 找出一个或多个正则表达式的匹配,参数为想要匹配的正则
-         *      8. str.replace(/a/ig,'aaa');  //替换与正则匹配的子串
-         *      9. str.search(/b/);     //stringObject 中第一个与 regexp 相匹配的子串的起始位置。
-         *     10. str.slice(startNum,endNum);      //提取字符串的片段，并返回新的字符串
-         *     11. str.split();     //把字符串分割为字符串数组
-         *     12. str.substr();    //从起始索引位置提取指定数目的字符
-         *     13. str.substring();     //提取字符串中指定两个索引之间的字符
-         *     14. str.toLocaleLowerCase();      //根据主机环境，把字符串转换为小写
-         *     15. str.toLocaleUpperCase();      //根据主机环境，把字符串转换为大写
-         *     16. str.toLowerCase();
-         *     17. str.toUpperCase();
-         *     18. any.toString();      //返回任意类型的字符串化值
-         *     19. valueOf();       //返回字符串对象的原始值
-         *
-         ***/
+```js
+/***
+     *  属性
+     *      1. str.length
+     *      2. str.constructor
+     *      3. str.prototype
+     *  方法
+     *      1. let str = new String('abc');  //或 str = 'abc';
+     *      2. str.charAt(1);     //返回索引1处的字符'b'
+     *      3. str.charCodeAt(); //返回指定位置字符的Unicode码
+     *      3. let newStr = str.concat('def');  //拼接两个或多个字符串，返回新的字符串
+     *      4. String.fromCharCode(98); //接受一个或多个Unicode值返回字符
+     *      5. str.indexOf('a');    //  返回检索指定字符串第一出现的位置，下标
+     *      6. str.lastIndexOf('a');    //返回检索指定字符串最后一次出现的位置
+     *      7. str.match();     // 找出一个或多个正则表达式的匹配,参数为想要匹配的正则
+     *      8. str.replace(/a/ig,'aaa');  //替换与正则匹配的子串
+     *      9. str.search(/b/);     //stringObject 中第一个与 regexp 相匹配的子串的起始位置。
+     *     10. str.slice(startNum,endNum);      //提取字符串的片段，并返回新的字符串
+     *     11. str.split();     //把字符串分割为字符串数组
+     *     12. str.substr();    //从起始索引位置提取指定数目的字符
+     *     13. str.substring();     //提取字符串中指定两个索引之间的字符
+     *     14. str.toLocaleLowerCase();      //根据主机环境，把字符串转换为小写
+     *     15. str.toLocaleUpperCase();      //根据主机环境，把字符串转换为大写
+     *     16. str.toLowerCase();
+     *     17. str.toUpperCase();
+     *     18. any.toString();      //返回任意类型的字符串化值
+     *     19. valueOf();       //返回字符串对象的原始值
+     *
+     ***/
+```
 
 ###3.2 es6扩展
 **3.2.1 includes(),startsWith(),endsWith()**
@@ -129,7 +135,7 @@ README#ES6学习
 - startsWith()  ——返回布尔值，表示参数字符串是否在元字符串的头部。
 - endsWith()    ——返回布尔值，表示参数是否在原字符串的尾部。
     
-    
+```js    
     //新方法
         // startsWith()
         
@@ -165,9 +171,11 @@ README#ES6学习
         
             b3=s.includes('word',3);
             console.log(b3); //true
+```
 
 **3.2.2 padStart(),padEnd()**
-    
+
+```js  
     //padStart(),padEnd()
         /***
          *  padStart()在字符串头部补全
@@ -188,9 +196,10 @@ README#ES6学习
             console.log(p2);    //ass
             p2 = p.padEnd(3,'ssssss');
             console.log(p2);    //ass
-            
+```
+
 **3.2.3 模板字符串**     
-    
+```js
     //模板字符串
         /***
          *  模板字符串
@@ -205,8 +214,9 @@ README#ES6学习
             let fun = m=>m;
             m1 = `${fun('hello')} word !`;
             console.log(m1);       
-**3.2.4 repeat()**
 ```
+**3.2.4 repeat()**
+```js
  //repeat()
     /***
      * let str = str1.repeat(n); n>=0 ; n若为字符串先默认转换成数字
@@ -224,10 +234,10 @@ README#ES6学习
         str = str1.repeat('abc');
         console.log(str);   // " "
 ```
-##4. Number
+## 4. Number
 
 **Number比较常用的方法**
-```
+```js
 /***
      *  Number
      *      es6方法
@@ -254,15 +264,9 @@ README#ES6学习
 ```
 
 
+## 2.箭头函数
 
-
-
-
-
-
-
-
-##2.箭头函数
+```js
         // es5
         function a(m){
             return m;
@@ -283,3 +287,4 @@ README#ES6学习
         console.log(d(2));//3
         
         // TODO this的指向问题
+```
