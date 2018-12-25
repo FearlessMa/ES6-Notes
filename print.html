@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>print</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        let a = [
+            'https://www.w3cschool.cn/',
+            'https://www.w3cschool.cn/attachments/image/20170306/1488780841257569.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476925658848.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476935836031.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476945739921.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476952296809.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476960662589.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476968735757.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476975191386.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476981856911.gif',
+            'https://www.w3cschool.cn/attachments/image/20160910/1473476987139357.gif',
+            'https://www.w3cschool.cn/adlog?w3ctype=workview&url=http://www.linuxprobe.com?from=w3cschool"'
+        ];
+        let app = document.getElementById('app');
+        let fag = document.createDocumentFragment();
+        const newa = a.map((item,i)=>{
+
+            let taga =document.createElement('button');
+            taga.innerHTML=i;
+            taga.setAttribute('data-url',item);
+            fag.appendChild(taga);
+        });
+        app.appendChild(fag);
+
+        app.addEventListener('click',(e)=>{
+            e =e.target;
+            if(e.tagName == 'BUTTON'){
+                let url = e.getAttribute('data-url');
+                console.log(url);
+                window.open(url,'_blank');
+            }
+        })
+        // let fag = document.createDocumentFragment();
+        // const newa = a.map((item,i)=>{
+        //
+        //     let taga =document.createElement('a');
+        //     taga.innerHTML=i;
+        //     taga.setAttribute('href',item);
+        //     fag.appendChild(taga);
+        // });
+        // app.appendChild(fag);
+    </script>
+</body>
+</html>

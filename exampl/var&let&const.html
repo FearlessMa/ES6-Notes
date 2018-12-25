@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var,let,const</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    /*// 变量var
+    // a.作用域：函数级
+        function v1(){
+            var v = 1;
+        }
+        // console.log(v); //v is not defined
+        if(true){
+            var m = 2;
+        }
+        console.log(m); //2
+    // b.可重复声明
+    var a = 1;
+    var a = 2;
+    console.log(a); //2
+    // a = 2
+    // c.常量（无，约定变量名称全大写代表常量）
+        var PI = 3.14 ;
+    // PI还是可以被重新赋值。
+        PI = 123;
+        console.log(PI);//123*/
+    //变量提升
+    console.log(m);//undefined
+    var m = 2;
+    /******************************************************************************/
+    // es6中let,const
+    // a.作用于：块级 - {}花括号
+        if(true){
+            let m = 1;
+            const m1 = 2;
+        }
+        console.log(m); // m is not defined
+        console.log(m1); // m1 is not defined
+    // b.不可重复声明
+    // 变量let
+        let a = 1;
+        //a = 3 ;         //栈中存储可以改变。
+        //let a = 2;      //Uncaught SyntaxError: Identifier 'a' has already been
+    // 常量const
+        const b = 1;
+       // b = 2 ;         //栈中存储不可改变。Uncaught TypeError: Assignment to constant variable
+        //const b = 3;    //Uncaught SyntaxError: Identifier 'b' has already been declared
+    // 声明引用类型可改变其内部的值。**引用的栈中的地址不可改变，对应堆中存储内容可改变。
+        const c = {a:1,b:2};
+        c.a=123; //可以修改
+        console.log(c);//{a: 123, b: 2}
+    //变量提升
+        console.log(m1); //报错
+        let m1 = 3;
+</script>
+</body>
+</html>

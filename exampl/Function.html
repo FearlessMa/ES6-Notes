@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+<body>
+<script>
+    /***
+     *  ES6函数扩展
+     *      1.函数默认值
+     *      2.rest参数---function(...rest){}  (es5的argument是类数组对象，es6的rest是数组，rest必须为函数最后一个参数)
+     *
+     ***/
+
+    //1.函数默认值
+    function a(x=1,y=2){
+        console.log(x,y);
+    }
+    a();    //1 2
+    //2.rest参数
+    b = (a,b,...arg)=>{
+        console.log(a);
+        console.log(b);
+        console.log(...arg);
+        console.log(arg);
+    }
+    b(1,2,3,4,5,6);
+        //1
+        //2
+        //3,4,5,6
+        //[3,4,5,6]
+
+
+
+     /***
+     *
+     ***/
+</script>
+</body>
+</html>

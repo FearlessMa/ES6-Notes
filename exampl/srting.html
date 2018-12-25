@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+
+<script>
+    //新方法
+    // startsWith()
+    let s = 'hello word !';
+    let b1 = s.startsWith('hello');
+    console.log(b1);    //true
+
+    // endsWith()
+    let b2 = s.endsWith('!');
+    console.log(b2);    //true
+
+    // includes()
+    let b3 = s.includes('l');
+    console.log(b3);    //true
+
+    // 第二参数
+    /***
+     * endsWith()第二个参数表示前n个字符。
+     * startsWith(),includes()表示从第n个字符位置到结束
+     ***/
+
+    b1 =s.startsWith('hello',6);
+    console.log(b1); //false
+
+    b2 = s.endsWith('!',12);
+    console.log(b2);
+
+    b3=s.includes('word',3);
+    console.log(b3);
+
+
+    //repeat()
+    /***
+     * let str = str1.repeat(n); n>=0 ; n若为字符串先默认转换成数字
+     * repeat方法将返回一个新的字符串，新字符串将原字符串重复n此
+     *
+     ***/
+
+        let str1 = 'abc';
+        let str = str1.repeat(2);
+        console.log(str);   //abcabc
+
+        str = str1.repeat('2');
+        console.log(str); //abcabc
+
+        str = str1.repeat('abc');
+        console.log(str);   // " "
+
+    //padStart(),padEnd()
+    /***
+     *  padStart()在字符串头部补全
+     *  padEnd()在字符串尾部补全
+     *  方法接受2各参数
+     *  1.第一个参数为指定返回字符串的长度
+     *  2.第二个参数补全的字符串
+     ***/
+
+        let p = 'a';
+
+        let p1 = p.padStart(3,'s');
+        console.log(p1);    //ssa
+        p1= p.padStart(3,'ssssss');
+        console.log(p1);    //ssa
+
+        let p2 = p.padEnd(3,'s');
+        console.log(p2);    //ass
+        p2 = p.padEnd(3,'ssssss');
+        console.log(p2);    //ass
+
+
+    //模板字符串
+    /***
+     *  模板字符串
+     *  1.`${变量}字符串`
+     *  2.模板字符串中可调用函数
+     ***/
+        let m = 'M';
+        let m1 = `${m}hc`;
+        console.log(m1);    //Mhc
+
+        let fun = m=>m;
+        m1 = `${fun('hello')} word !`;
+        console.log(m1);
+
+    //es5及以前的string方法及属性
+    /***
+     *  属性
+     *      1. str.length
+     *      2. str.constructor
+     *      3. str.prototype
+     *  方法
+     *      1. let str = new String('abc');  //或 str = 'abc';
+     *      2. str.charAt(1);     //返回索引1处的字符'b'
+     *      3. str.charCodeAt(); //返回指定位置字符的Unicode码
+     *      3. let newStr = str.concat('def');  //拼接两个或多个字符串，返回新的字符串
+     *      4. String.fromCharCode(98); //接受一个或多个Unicode值返回字符
+     *      5. str.indexOf('a');    //  返回检索指定字符串第一出现的位置，下标
+     *      6. str.lastIndexOf('a');    //返回检索指定字符串最后一次出现的位置
+     *      7. str.match();     // 找出一个或多个正则表达式的匹配,参数为想要匹配的正则
+     *      8. str.replace(/a/ig,'aaa');  //替换与正则匹配的子串
+     *      9. str.search(/b/);     //stringObject 中第一个与 regexp 相匹配的子串的起始位置。
+     *     10. str.slice(startNum,endNum);      //提取字符串的片段，并返回新的字符串
+     *     11. str.split();     //把字符串分割为字符串数组
+     *     12. str.substr();    //从起始索引位置提取指定数目的字符
+     *     13. str.substring();     //提取字符串中指定两个索引之间的字符
+     *     14. str.toLocaleLowerCase();      //根据主机环境，把字符串转换为小写
+     *     15. str.toLocaleUpperCase();      //根据主机环境，把字符串转换为大写
+     *     16. str.toLowerCase();
+     *     17. str.toUpperCase();
+     *     18. any.toString();      //返回任意类型的字符串化值
+     *     19. valueOf();       //返回字符串对象的原始值
+     *
+     ***/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
